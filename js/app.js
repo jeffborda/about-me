@@ -1,13 +1,8 @@
 'use strict';
 
 // Get the user's name
-
 var username = prompt('Hello, what is your name?');
 alert('Nice to have you here, ' + username + ' I\'m going to ask you some quesitons about me.  So feel free to answer y/n or yes/no.');
-
-
-
-
 
 // Ask them five y/n quesitons
 var correctCounter = 0;
