@@ -57,6 +57,23 @@ else {
     alert('No ' + username + ' my last name is "Borda".');
 }
 
+//Lab 3 part
+
+var answerSix = prompt('Let\'s see if you can guess how old Scout Dog is. You have four gueses. GO!');
+intAnswerSix = parseInt(answerFive, 10);
+console.log('User entered answerSix as: ' + answerSix);
+console.log('answerSix was parsed into int: ' + intAnswerSix);
+for (var i = 0; i < 4; i++) {
+    if (intAnswerSix === 8) {
+        console.log('Yeah! She is indeed 8... or so I\'m told.');
+    }
+}
+
+
+
+
+
+
 console.log('correctCounter is at: ' + correctCounter);
 alert(username + ', you got ' + correctCounter + ' answers correct.');
 if (correctCounter <= 1) {
