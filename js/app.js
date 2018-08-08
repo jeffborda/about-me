@@ -47,7 +47,7 @@ else {
   alert('Sorry, no.. my hair is brown');
 }
 
-var answerFive = prompt('Ok ' + username + ' Last question. Is my last name "Borda"?').toLowerCase();
+var answerFive = prompt('Ok ' + username + ' , another question. Is my last name "Borda"?').toLowerCase();
 console.log('User entered answerFive as: ' + answerFive);
 if (answerFive === 'y' || answerFive === 'yes'){
   alert('Impressive!! You\'re right. Good job.');
@@ -57,9 +57,9 @@ else {
   alert('No ' + username + ' my last name is "Borda".');
 }
 
-Lab 3 part ---------------------------------
+// Lab 3 part ---------------------------------
 
-Question 6
+// Question 6
 var answerSix = prompt('Let\'s see if you can guess how old Scout Dog is. You have four gueses. GO!');
 var intAnswerSix = parseInt(answerSix, 10);
 var wrongAnswerSix = true;
@@ -89,7 +89,7 @@ for (var i = 0; i < 4 && wrongAnswerSix; i++) {
 }
 
 //Question 7
-var myStates = ['texas', 'alabama'];
+var myStates = ['Texas', 'Alabama'];
 var answerSeven = prompt('Now I\'ll give you six tries to guess one of the states I\'ve lived in besides Washington. Go for it ' + username + '!').toLowerCase();
 var wrongAnswer = true;
 var questionSevenCounter = 0;
@@ -97,16 +97,17 @@ console.log('User entered answerSeven as: ' + answerSeven + ', with questionSeve
 
 while (questionSevenCounter < 6 && wrongAnswer) {
   questionSevenCounter++;
-  for (var i = 0; i < myStates.length; i++) {
-    if (answerSeven === myStates[i]) {
+  for (var j = 0; j < myStates.length; j++) {
+    if (answerSeven === myStates[j].toLowerCase()) {
       wrongAnswer = false;
       correctCounter++;
-      alert('Yeah, you got it.  I did live in ' + myStates[i]);
+      alert('Yeah, you got it.  I did live in ' + myStates[j]);
     }
   }
 
   if (questionSevenCounter < 6 && wrongAnswer) {
     answerSeven = prompt('Sorry, ' + answerSeven + ' is not correct... Try again.').toLowerCase();
+    console.log('User re-entered answerSeven as: ' + answerSeven + ', with questionSevenCounter at: ' + questionSevenCounter);
   }
   else if (questionSevenCounter === 6 && wrongAnswer) {
     alert('No, ' + answerSeven + ' is not correct. You\'re out of tries.');
@@ -116,7 +117,7 @@ while (questionSevenCounter < 6 && wrongAnswer) {
 
 //Correct counter & feedback at end
 console.log('correctCounter is at: ' + correctCounter);
-alert(username + ', you got ' + correctCounter + ' answers correct.');
+alert(username + ', you got ' + correctCounter + ' of 7 answers correct.');
 if (correctCounter <= 3) {
   alert('Better luck next time ' + username + '!!');
 }
