@@ -4,7 +4,7 @@
 var username = prompt('Hello, what is your name?');
 alert('Nice to have you here, ' + username + ' I\'m going to ask you some quesitons about me.  So feel free to answer y/n or yes/no.');
 
-// Ask them five y/n quesitons
+// Ask them five yes/no y/n type questions
 var correctCounter = 0;
 
 var answerOne = prompt('Do I have any pets?').toLocaleLowerCase();
@@ -49,7 +49,7 @@ else {
 
 var answerFive = prompt('Ok ' + username + ' , another question. Is my last name "Borda"?').toLowerCase();
 console.log('User entered answerFive as: ' + answerFive);
-if (answerFive === 'y' || answerFive === 'yes'){
+if (answerFive === 'y' || answerFive === 'yes') {
   alert('Impressive!! You\'re right. Good job.');
   correctCounter++;
 }
@@ -59,7 +59,7 @@ else {
 
 // Lab 3 part ---------------------------------
 
-// Question 6
+// Question 6: Guess Scout's age and say if answer too high/low
 var answerSix = prompt('Let\'s see if you can guess how old Scout Dog is. You have four gueses. GO!');
 var intAnswerSix = parseInt(answerSix, 10);
 var wrongAnswerSix = true;
@@ -72,7 +72,7 @@ for (var i = 0; i < 4 && wrongAnswerSix; i++) {
     correctCounter++;
   }
   else if (wrongAnswerSix) {
-    if (intAnswerSix < 8 && i < 3){
+    if (intAnswerSix < 8 && i < 3) {
       answerSix = prompt('No... you\'re too low. Try again.');
       console.log('User re-entered answerSix as: ' + answerSix + ', when i = ' + i);
     }
@@ -88,7 +88,7 @@ for (var i = 0; i < 4 && wrongAnswerSix; i++) {
   }
 }
 
-//Question 7
+// Question 7: Guess states
 var myStates = ['Texas', 'Alabama'];
 var answerSeven = prompt('Now I\'ll give you six tries to guess one of the states I\'ve lived in besides Washington. Go for it ' + username + '!').toLowerCase();
 var wrongAnswer = true;
@@ -115,7 +115,7 @@ while (questionSevenCounter < 6 && wrongAnswer) {
 }
 
 
-//Correct counter & feedback at end
+// Display correct score & feedback at end
 console.log('correctCounter is at: ' + correctCounter);
 alert(username + ', you got ' + correctCounter + ' of 7 answers correct.');
 if (correctCounter <= 3) {
