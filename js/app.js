@@ -69,23 +69,24 @@ function questionFive() {
   }
 }
 
+function verifyNum(answerSix) {
+  while (isNaN(answerSix)) {
+    answerSix = parseInt(prompt('I said a number, please!!!'));
+  }
+  return answerSix;
+
+}
+
 function questionSix() {
 
 
   var answerSix = parseInt(prompt('Let\'s see if you can guess how old Scout Dog is. You have four gueses. GO!'));
 
-  while (isNaN(answerSix)) {
-    answerSix = parseInt(prompt('I said a number, please!!!'));
-  }
-
-  // var answerSix = parseInt(answerSix, 10);
+  answerSix = verifyNum(answerSix);
 
   var wrongAnswerSix = true;
 
   console.log('User entered answerSix as: ' + answerSix);
-
-
-
 
   for (var i = 0; i < 4 && wrongAnswerSix; i++) {
     if (answerSix === 8 && wrongAnswerSix) {
@@ -96,17 +97,12 @@ function questionSix() {
     else if (wrongAnswerSix) {
       if (answerSix < 8 && i < 3) {
         answerSix = parseInt(prompt('No... you\'re too low. Try again.'));
-        while (isNaN(answerSix)) {
-          answerSix = parseInt(prompt('I said a number, please!!!'));
-        }
+        answerSix = verifyNum(answerSix);
         console.log('User re-entered answerSix as: ' + answerSix + ', when i = ' + i);
       }
       else if (answerSix > 8 && i < 3) {
         answerSix = parseInt(prompt('No... you\'re too high. Try again.'));
-        while (isNaN(answerSix)) {
-          answerSix = parseInt(prompt('I said a number, please!!!'));
-          console.log('User entered answerSix as: ' + answerSix);
-        }
+        answerSix = verifyNum(answerSix);
       }
       else {
         alert('Nope.. and you\'re out of tries. Sorry.');
