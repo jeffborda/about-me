@@ -70,31 +70,49 @@ function questionFive() {
 }
 
 function questionSix() {
-  var answerSix = prompt('Let\'s see if you can guess how old Scout Dog is. You have four gueses. GO!');
-  var intAnswerSix = parseInt(answerSix, 10);
+
+
+  var answerSix = parseInt(prompt('Let\'s see if you can guess how old Scout Dog is. You have four gueses. GO!'));
+
+  while (isNaN(answerSix)) {
+    answerSix = parseInt(prompt('I said a number, please!!!'));
+  }
+
+  // var answerSix = parseInt(answerSix, 10);
+
   var wrongAnswerSix = true;
+
   console.log('User entered answerSix as: ' + answerSix);
-  console.log('answerSix was parsed into int: ' + intAnswerSix);
+
+
+
+
   for (var i = 0; i < 4 && wrongAnswerSix; i++) {
-    if (intAnswerSix === 8 && wrongAnswerSix) {
+    if (answerSix === 8 && wrongAnswerSix) {
       alert('Yeah! She is indeed 8... or so I\'m told, no one really knows for sure.');
       wrongAnswerSix = false;
       correctCounter++;
     }
     else if (wrongAnswerSix) {
-      if (intAnswerSix < 8 && i < 3) {
-        answerSix = prompt('No... you\'re too low. Try again.');
+      if (answerSix < 8 && i < 3) {
+        answerSix = parseInt(prompt('No... you\'re too low. Try again.'));
+        while (isNaN(answerSix)) {
+          answerSix = parseInt(prompt('I said a number, please!!!'));
+        }
         console.log('User re-entered answerSix as: ' + answerSix + ', when i = ' + i);
       }
-      else if (intAnswerSix > 8 && i < 3) {
-        answerSix = prompt('No... you\'re too high. Try again.');
-        console.log('User entered answerSix as: ' + answerSix);
+      else if (answerSix > 8 && i < 3) {
+        answerSix = parseInt(prompt('No... you\'re too high. Try again.'));
+        while (isNaN(answerSix)) {
+          answerSix = parseInt(prompt('I said a number, please!!!'));
+          console.log('User entered answerSix as: ' + answerSix);
+        }
       }
       else {
         alert('Nope.. and you\'re out of tries. Sorry.');
       }
-      intAnswerSix = parseInt(answerSix, 10);
-      console.log('answerSix was parsed into int: ' + intAnswerSix + ', when i = ' + i);
+      answerSix = parseInt(answerSix, 10);
+      console.log('answerSix was parsed into int: ' + answerSix + ', when i = ' + i);
     }
   }
 }
